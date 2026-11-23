@@ -1,0 +1,18 @@
+<script>
+    var randomNum = Math.floor(Math.random() * 100 ) + 1
+
+     let numeroEscolhido = 0
+
+    while (numeroEscolhido !== randomNum) {
+        numeroEscolhido = Number(prompt('Tente adivinhar o número!'))
+
+        if(numeroEscolhido > randomNum) {
+            alert('O número é menor')
+        } else if (numeroEscolhido < randomNum) {
+            alert('O número é maior')
+        } else {
+            alert('Você acertou o número!')
+        }
+    }
+
+</script>

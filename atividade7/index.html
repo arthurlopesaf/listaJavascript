@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+</head>
+<body>
+    <input type="text" id="campoTarefa" placehoder="Digite uma tarefa">
+    <button id = "btnAdicionar">adicionar</button>
+    
+    <ul id="listaTarefas"></ul>
+
+    <script>
+        const tarefas = [];
+        const inputTarefa = document.querySelector("#campoTarefa");
+        const botaoAdicionar = document.querySelector("#btnAdicionar");
+        const lista = document.querySelector("#listaTarefas");
+
+        botaoAdicionar.addEventListener("click", () => {
+            const texto = inputTarefa.value.trim();
+
+            if (texto !== "") {
+                tarefas.push(texto);
+            
+
+                const item = document.createElement("li");
+                item.textContent = texto;
+                lista.appendChild(item);
+
+                inputTarefa.value = "";
+                inputTarefa.focus();
+
+            }
+        })
+
+    </script>
+</body>
+</html>
